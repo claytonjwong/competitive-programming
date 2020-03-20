@@ -5,12 +5,15 @@
 
 ## Assignments
 
-* [Inventing Tests](#inventing-tests)
-* [Addition and Subtraction](#addition-and-subtraction)
+* [0. Inventing Tests](#inventing-tests)
+* [1. Addition and Subtraction](#addition-and-subtraction)
+* [2. Erasing Maximum](#erasing-maximum)
+* [3. Increment](#increment)
+* [4. Straight Flush](#straight-flush)
 
 ---
 
-### Inventing Tests
+## Inventing Tests
 
 * **Problem 1:** You are given a non-empty list of integers, and you need to find the maximum value among them. The length of the list is not greater than 100, and the absolute value of each element is not greater than 1000.
 
@@ -99,9 +102,9 @@ def getTest():
 
 ---
 
-### Addition and Subtraction
+## Addition and Subtraction
 
-![](addition_and_subtraction.png)
+![](1_addition_and_subtraction/1_addition_and_subtraction.png)
 
 ```cpp
 #include <iostream>
@@ -119,6 +122,103 @@ int main() {
         }
         x += i % 2 == 0 ? add : -sub;
     }
+    cout << ans << endl;
+    return 0;
+}
+```
+
+---
+
+## Erasing Maximum
+
+![](2_erasing_max/2_erasing_max.png)
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <iterator>
+
+using namespace std;
+
+int main() {
+    int N{ 0 }, del{ -1 };
+    vector<int> A;
+    cin >> N, copy_n(istream_iterator<int>(cin), N, back_inserter(A));
+    for (auto i{ 0 }, max{ 0 }, cnt{ 0 }; i < N; ++i) {
+        if (max < A[i])
+            max = A[i], cnt = 0, del = i;
+        if (max == A[i] && ++cnt == 3)
+            del = i;
+    }
+    A.erase(A.begin() + del);
+    copy(A.begin(), A.end(), ostream_iterator<int>(cout, " ")), cout << endl;
+    return 0;
+}
+```
+
+---
+
+## Increment
+
+![](3_increment/3_increment.png)
+
+```cpp
+int main() {
+    string S; cin >> S;
+    auto N = all_of(S.begin(), S.end(), [](auto c) { return c == '9'; }) ? S.size() + 1 : S.size();
+    cout << N << endl;
+    return 0;
+}
+```
+
+---
+
+## Straight Flush
+
+![](4_straight_flush/4_straight_flush.png)
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <iterator>
+#include <deque>
+#include <numeric>
+
+using namespace std;
+
+int main() {
+    vector<string> A;
+    copy_n(istream_iterator<string>(cin), 5, back_inserter(A));
+    sort(A.begin(), A.end());
+    auto suit = A[0][1];
+    auto sameSuit = all_of(A.begin(), A.end(), [=](auto& card) { return card[1] == suit; });
+    vector<int> V;
+    transform(A.begin(), A.end(), back_inserter(V), [](auto& card) {
+        char c = card[0];
+        if (isalpha(c)) {
+            switch (c) {
+                case 'A': return 14; // ace high by default
+                case 'K': return 13;
+                case 'Q': return 12;
+                case 'J': return 11;
+                case 'T': return 10;
+            }
+        }
+        return c - '0';
+    });
+    auto isStraight = [&](bool aceHigh = true) { // ace high by default
+        if (!aceHigh) {
+            auto ace = find(V.begin(), V.end(), 14);
+            if (ace != V.end())
+                *ace = 1; // ace low by manual override
+        }
+        sort(V.begin(), V.end());
+        deque<int> diff; adjacent_difference(V.begin(), V.end(), back_inserter(diff)), diff.pop_front();
+        return all_of(diff.begin(), diff.end(), [](auto delta) { return delta == 1; });
+    };
+    string ans = sameSuit && (isStraight() || isStraight(false)) ? "YES" : "NO";
     cout << ans << endl;
     return 0;
 }
