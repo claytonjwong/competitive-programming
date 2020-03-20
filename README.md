@@ -1,4 +1,9 @@
 ## [Week 1: Programming Competitions](1_programming_competitions)
+### Key Concepts
+* Know various strategies for inventing test cases and testing programs
+* Understand what programming competitions and algorithmic problems are, what's the difference compared to other forms of programming
+* Learn about various platforms dedicated to competitive programming, and what opportunities they offer
+
 ### Resources
 * [Competitions](1_programming_competitions/competitions.pdf)
 * [Testing](1_programming_competitions/testing.pdf)
