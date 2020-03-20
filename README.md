@@ -11,3 +11,4 @@ Saint Petersburg State University
 
 ### Assignments
 * [Inventing Tests](1_programming_competitions/README.md#inventing-tests)
+* [Addition and Subtraction](1_programming_competitions/README.md#addition-and-subtraction)
