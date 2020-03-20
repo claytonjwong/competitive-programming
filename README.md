@@ -1,9 +1,3 @@
-# Competitive Programmer's Core Skills
-
-Saint Petersburg State University
-
----
-
 ## [Week 1: Programming Competitions](1_programming_competitions)
 ### Resources
 * [Competitions](1_programming_competitions/competitions.pdf)
