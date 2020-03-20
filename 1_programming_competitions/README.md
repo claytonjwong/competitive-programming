@@ -164,6 +164,11 @@ int main() {
 ![](3_increment/3_increment.png)
 
 ```cpp
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
 int main() {
     string S; cin >> S;
     auto N = all_of(S.begin(), S.end(), [](auto c) { return c == '9'; }) ? S.size() + 1 : S.size();
@@ -179,37 +184,45 @@ int main() {
 ![](4_straight_flush/4_straight_flush.png)
 
 ```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <iterator>
+#include <unordered_set>
+#include <cassert>
+
+using namespace std;
+
 int main() {
-    vector<string> A;
-    copy_n(istream_iterator<string>(cin), 5, back_inserter(A));
-    vector<int> V; // value
-    unordered_set<char> S; // suit
-    transform(A.begin(), A.end(), back_inserter(V), [&](auto& card) {
-        char val{ card[0] }, suit{ card[1] };
-        S.insert(suit);
-        if (isalpha(val)) {
-            switch (val) {
-                case 'A': return 14; // ace high by default
-                case 'K': return 13;
-                case 'Q': return 12;
-                case 'J': return 11;
-                case 'T': return 10;
-            }
-        }
-        return val - '0';
-    });
-    auto isStraight = [&](bool aceHigh = true) { // ace high by default
-        if (!aceHigh) {
-            auto ace = find(V.begin(), V.end(), 14);
-            if (ace != V.end())
-                *ace = 1; // ace low by manual override
-        }
-        sort(V.begin(), V.end());
-        deque<int> diff; adjacent_difference(V.begin(), V.end(), back_inserter(diff)), diff.pop_front();
-        return all_of(diff.begin(), diff.end(), [](auto delta) { return delta == 1; });
+    vector<string> A; copy_n(istream_iterator<string>(cin), 5, back_inserter(A));
+    auto isSameSuit = [&](unordered_set<char> S = {}) {
+        transform(A.begin(), A.end(), inserter(S, S.end()), [](auto& card) { return card[1]; });
+        return S.size() == 1;
     };
-    string ans = S.size() == 1 && (isStraight() || isStraight(false)) ? "YES" : "NO";
-    cout << ans << endl;
+    auto getValues = [&](bool aceHigh, vector<int> V = {}) {
+        transform(A.begin(), A.end(), back_inserter(V), [=](auto& card) {
+           auto val = card[0];
+            if (isalpha(val)) {
+                switch (val) {
+                    case 'A': return aceHigh ? 14 : 1;
+                    case 'K': return 13;
+                    case 'Q': return 12;
+                    case 'J': return 11;
+                    case 'T': return 10;
+                }
+            }
+            return val - '0';
+        });
+        sort(V.begin(), V.end());
+        return V;
+    };
+    auto isStraight = [](auto& values) {
+        assert(values.size() == 5);
+        return values[4] - values[0] == 4;
+    };
+    auto hi = getValues(true),  // ace high
+         lo = getValues(false); // ace low
+    cout << (isSameSuit() && (isStraight(hi) || isStraight(lo)) ? "YES" : "NO") << endl;
     return 0;
 }
 ```
