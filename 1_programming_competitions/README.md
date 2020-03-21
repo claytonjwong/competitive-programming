@@ -1,15 +1,20 @@
 # Week 1: Programming Competitions
+### Key Concepts
+* Know various strategies for inventing test cases and testing programs
+* Understand what programming competitions and algorithmic problems are, what's the difference compared to other forms of programming
+* Learn about various platforms dedicated to competitive programming, and what opportunities they offer
+
 ## Resources
-* [Competitions](competitions.pdf)
-* [Testing](testing.pdf)
+1. [Competitions](competitions.pdf)
+2. [Testing](testing.pdf)
 
 ## Assignments
 
-* [0. Inventing Tests](#inventing-tests)
-* [1. Addition and Subtraction](#addition-and-subtraction)
-* [2. Erasing Maximum](#erasing-maximum)
-* [3. Increment](#increment)
-* [4. Straight Flush](#straight-flush)
+0. [Inventing Tests](#inventing-tests)
+1. [Addition and Subtraction](#addition-and-subtraction)
+2. [Erasing Maximum](#erasing-maximum)
+3. [Increment](#increment)
+4. [Straight Flush](#straight-flush)
 
 ---
 
