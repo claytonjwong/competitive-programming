@@ -194,7 +194,8 @@ int main() {
 using namespace std;
 
 int main() {
-    vector<string> A; copy_n(istream_iterator<string>(cin), 5, back_inserter(A));
+    int N{ 5 };
+    vector<string> A; copy_n(istream_iterator<string>(cin), N, back_inserter(A));
     auto isSameSuit = [&](unordered_set<char> S = {}) {
         transform(A.begin(), A.end(), inserter(S, S.end()), [](auto& card) { return card[1]; });
         return S.size() == 1;
@@ -215,15 +216,14 @@ int main() {
         });
         return V;
     };
-    auto isStraight = [](auto& values) {
-        assert(values.size() == 5);
-        return 4 == *max_element(values.begin(), values.end())
-                  - *min_element(values.begin(), values.end());
+    auto isStraight = [=](auto& values) {
+        assert(N == values.size());
+        return N == 1 + *max_element(values.begin(), values.end()) // +1 for [i..j] inclusive
+                      - *min_element(values.begin(), values.end());
     };
     auto hi = getValues(true),  // ace high
          lo = getValues(false); // ace low
     cout << (isSameSuit() && (isStraight(hi) || isStraight(lo)) ? "YES" : "NO") << endl;
     return 0;
 }
-
 ```
