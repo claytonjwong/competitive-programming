@@ -5,8 +5,8 @@
 * Learn about various platforms dedicated to competitive programming, and what opportunities they offer
 
 ## Resources
-1. [Competitions](competitions.pdf)
-2. [Testing](testing.pdf)
+1. [Competitions](docs/competitions.pdf)
+2. [Testing](docs/testing.pdf)
 
 ## Assignments
 
