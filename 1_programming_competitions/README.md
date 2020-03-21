@@ -213,16 +213,17 @@ int main() {
             }
             return val - '0';
         });
-        sort(V.begin(), V.end());
         return V;
     };
     auto isStraight = [](auto& values) {
         assert(values.size() == 5);
-        return values[4] - values[0] == 4;
+        return 4 == *max_element(values.begin(), values.end())
+                  - *min_element(values.begin(), values.end());
     };
     auto hi = getValues(true),  // ace high
          lo = getValues(false); // ace low
     cout << (isSameSuit() && (isStraight(hi) || isStraight(lo)) ? "YES" : "NO") << endl;
     return 0;
 }
+
 ```
