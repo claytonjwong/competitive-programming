@@ -28,6 +28,11 @@
 ## Assignments
 0. [Quiz](#quiz)
 1. [The Cheapest Permutation](#the-cheapest-permutation)
+2. [The King](#the-king)
+3. [Sum of Minimums](#sum-of-minimums)
+4. [Expression Evaluation](#expression-evaluation)
+
+---
 
 ## Quiz
 Below you see a function, which calculates a certain value from an array.
@@ -58,6 +63,8 @@ def calculate(a):
 		result += sum * x
 	return result
 ```
+
+---
 
 ## The Cheapest Permutation
 
@@ -98,6 +105,132 @@ int main() {
     } while (next_permutation(cur.begin(), cur.end()));
     transform(ans.begin(), ans.end(), ans.begin(), [](auto x) { return x + 1; }); // 0-based to 1-based indexing
     copy(ans.begin(), ans.end(), ostream_iterator<int>(cout, " ")), cout << endl;
+    return 0;
+}
+```
+
+---
+
+## The King
+
+![](2_the_king/2_the_king.png)
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <numeric>
+
+using namespace std;
+using VI = vector<int>;
+using VVI = vector<VI>;
+
+int main() {
+    int M, N; cin >> M >> N;
+    VVI A(M, VI(N));
+    // clock-wise: up, up-right, right, down-right, down, down-left, left, up-left
+    VVI dirs = {{-1, 0}, {-1, 1}, {0, 1}, {1, 1}, {1, 0}, {1, -1}, {0, -1}, {-1, -1}};
+    auto inBounds = [&](auto i, auto j) {
+        return 0 <= i && i < M && 0 <= j && j < N;
+    };
+    auto adjSpaces = [&](auto i, auto j) {
+        auto spaces{ 0 };
+        for (auto& dir: dirs) {
+            auto u = i + dir[0],
+                 v = j + dir[1];
+            if (inBounds(u, v) && A[u][v] == 0)
+                ++spaces;
+        }
+        return spaces;
+    };
+    auto ok = [&](auto i, auto j) {
+        if (adjSpaces(i, j) == 0)
+            return false; // no empty space for a king at i,j ❌
+        for (auto& dir: dirs) {
+            auto u = i + dir[0],
+                 v = j + dir[1];
+            if (inBounds(u, v) && A[u][v] == 1 && adjSpaces(u, v) == 1)
+                return false; // adj u,v king's only empty space is i,j so we cannot place a king here ❌
+        }
+        return true;
+    };
+    for (auto i{ 0 }; i < M; ++i)
+        for (auto j{ 0 }; j < N; ++j)
+            if (ok(i, j))
+                A[i][j] = 1;
+    auto kings{ 0 };
+    for (auto& row: A)
+        kings += accumulate(row.begin(), row.end(), 0);
+    cout << kings << endl;
+    return 0;
+}
+```
+
+---
+
+## Sum of Minimums
+
+![](3_sum_of_minimums/3_sum_of_minimums.png)
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <iterator>
+
+using namespace std;
+
+int main() {
+    int N; cin >> N;
+    vector<int> A; copy_n(istream_iterator<int>(cin), N, back_inserter(A));
+    auto sum{ 0L };
+    for (auto i{ 0 }; i < N; ++i)
+        for (auto j{ i + 1 }; j <= N; ++j)
+            sum += *min_element(A.begin() + i, A.begin() + j); // min[i..j)
+    cout << sum << endl;
+    return 0;
+}
+```
+
+---
+
+## Expression Evaluation
+
+![](4_expression_evaluation/4_expression_evaluation.png)
+
+```cpp
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <algorithm>
+#include <iterator>
+#include <numeric>
+
+using namespace std;
+
+int main() {
+    string s; cin >> s;
+    auto getNums = [&](string t = {}, vector<int> nums = {}) {
+        transform(s.begin(), s.end(), back_inserter(t), [](auto c) {
+            return isdigit(c) ? c : ' ';
+        });
+        istringstream stream{ t };
+        copy(istream_iterator<int>(stream), istream_iterator<int>(), back_inserter(nums));
+        return nums;
+    };
+    auto getOps = [&](string t = {}, vector<char> ops = {}) {
+        transform(s.begin(), s.end(), back_inserter(t), [](auto c) {
+            return !isdigit(c) ? c : ' ';
+        });
+        istringstream stream{ t };
+        copy(istream_iterator<char>(stream), istream_iterator<char>(), back_inserter(ops));
+        return ops;
+    };
+    auto nums = getNums();
+    auto ops = getOps();
+    for (auto i{ 1 }; i < nums.size(); ++i)
+        if (ops[i - 1] == '-')
+            nums[i] = -nums[i];
+    cout << accumulate(nums.begin(), nums.end(), 0L) << endl;
     return 0;
 }
 ```
