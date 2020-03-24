@@ -45,3 +45,6 @@
 ### Assignments
 0. [Quiz](2_correctness_first/README.md#quiz)
 1. [The Cheapest Permutation](2_correctness_first/README.md#the-cheapest-permutation)
+2. [The King](2_correctness_first/README.md#the-king)
+3. [Sum of Minimums](2_correctness_first/README.md#sum-of-minimums)
+4. [Expression Evaluation](2_correctness_first/README.md#expression-evaluation)
