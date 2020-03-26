@@ -15,6 +15,8 @@
 3. [Increment](1_programming_competitions/README.md#increment)
 4. [Straight Flush](1_programming_competitions/README.md#straight-flush)
 
+---
+
 ## [Week 2: Correctness First](2_correctness_first)
 ### Key Concepts
 * Deduce simple upper bounds on a solution's running time and decide if it's fast enough for a given time limit
@@ -48,3 +50,28 @@
 2. [The King](2_correctness_first/README.md#the-king)
 3. [Sum of Minimums](2_correctness_first/README.md#sum-of-minimums)
 4. [Expression Evaluation](2_correctness_first/README.md#expression-evaluation)
+
+---
+
+## [Week 3: Common Struggles](3_common_struggles)
+### Key Concepts
+* Know how integers are represented
+* Identify places where integer overflow happens
+* Know and compare different ways of representing non-integers, including floating point arithmetic
+* Handle precision issues when performing basic operations with doubles
+* Distinguish common situations when solution could be simplified by replacing doubles with integers
+* Apply code structuring to simplify debugging
+* Auto-check program correctness by identifying invariants and inserting corresponding assertions
+* Understand motivation and strategy for upsolving
+
+### Resources
+1. [Insidious Numbers](3_common_struggles/docs/1_insidious_numbers/numbers.pdf)
+2. [Getting Unstuck](3_common_struggles/docs/4_getting_unstuck/Getting_Unstuck.pptx)
+
+### Assignments
+
+0. [Quiz](3_common_struggles/docs/quiz.pdf)
+1. [Compare Sums](3_common_struggles/README.md#compare-sums)
+2. [Round Up](3_common_struggles/README.md#round-up)
+3. [Yet Another Sum](3_common_struggles/README.md#yet-another-sum)
+4. [Binary Knapsack](3_common_struggles/README.md#binary-knapsack)
