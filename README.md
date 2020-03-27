@@ -75,3 +75,22 @@
 2. [Round Up](3_common_struggles/README.md#round-up)
 3. [Yet Another Sum](3_common_struggles/README.md#yet-another-sum)
 4. [Binary Knapsack](3_common_struggles/README.md#binary-knapsack)
+
+---
+
+## Week 4: Technical Problems(4_technical_problems)
+### Key Concepts
+* Invent basic greedy solutions and prove their correctness
+* Understand what programming language features are most important on competitions
+* Know specialties of popular programming languages
+* Apply the segment tree data structure to solve problems which require answer queries of certain form
+
+### Resources
+1. [Greedy Algorithms](4_technical_problems/docs/1_greedy_algorithms/greedy.pdf)
+2. [Segment Tree](4_technical_problems/docs/2_segment_tree/segment_final.pdf)
+3. [Language Specifics](4_technical_problems/docs/3_language_specifics/language.pdf)
+
+### Assignments
+
+## Assignments
+1. [The Most Frequent Symbol](4_technical_problems/README.md#the-most-frequent-symbol)
