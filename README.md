@@ -78,7 +78,7 @@
 
 ---
 
-## Week 4: Technical Problems(4_technical_problems)
+## [Week 4: Technical Problems](4_technical_problems)
 ### Key Concepts
 * Invent basic greedy solutions and prove their correctness
 * Understand what programming language features are most important on competitions
