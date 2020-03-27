@@ -94,3 +94,4 @@
 
 ## Assignments
 1. [The Most Frequent Symbol](4_technical_problems/README.md#the-most-frequent-symbol)
+2. [Maximal Distance](4_technical_problems/README.md#maximal-distance)
