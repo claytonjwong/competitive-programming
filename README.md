@@ -95,3 +95,5 @@
 ## Assignments
 1. [The Most Frequent Symbol](4_technical_problems/README.md#the-most-frequent-symbol)
 2. [Maximal Distance](4_technical_problems/README.md#maximal-distance)
+3. [Multiset](4_technical_problems/README.md#multiset)
+4. [Maximal Sum Subarray](4_technical_problems/README.md#maximal-sum-subarray)
