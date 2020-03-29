@@ -9,7 +9,7 @@ int main() {
     string S; cin >> S;
     int N = S.size();
     PrefixCount A(N + 1);
-    for (auto i{ 1 }; i <= N; ++i)         // i is offset by 1 for recurrent relation...
+    for (auto i{ 1 }; i <= N; ++i)         // i is offset by 1 for recurrence relation...
         A[i] = A[i - 1], ++A[i][S[i - 1]]; // A[i] = A[i - 1] with count of current char at S[i - 1] incremented by 1
     auto getMaxFreq = [&](auto i, auto j) {
         auto max{ 0 };
