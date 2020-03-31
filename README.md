@@ -91,9 +91,22 @@
 3. [Language Specifics](4_technical_problems/docs/3_language_specifics/language.pdf)
 
 ### Assignments
-
-## Assignments
 1. [The Most Frequent Symbol](4_technical_problems/README.md#the-most-frequent-symbol)
 2. [Maximal Distance](4_technical_problems/README.md#maximal-distance)
 3. [Multiset](4_technical_problems/README.md#multiset)
 4. [Maximal Sum Subarray](4_technical_problems/README.md#maximal-sum-subarray)
+
+---
+
+## [Week 5: Dynamic Programming](5_dynamic_programming)
+### Key Concepts
+* Subproblems (and recurrence relation on them) are the most important ingredient of a dynamic programming algorithm
+* Two common ways of arriving at the right subproblem:
+	1. Analyze the structure of an optimal solution
+	2. Implement a brute-force solution and optimize it
+
+### Resources
+1. [Dynamic Programming](5_dynamic_programming/docs/dynprog.pdf)
+
+### Assignments
+1. [Longest Increasing Subsequence](5_dynamic_programming/README.md#longest-increasing-subsequence)
