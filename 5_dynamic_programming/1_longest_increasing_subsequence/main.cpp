@@ -10,6 +10,7 @@ using namespace std;
 using VI = vector<int>;
 using Memo = unordered_map<int, int>; // { end index, max inc seq len }
 
+#ifdef TOP_DOWN
 int go(VI& A, Memo& T, int j) {
     if (T.find(j) != T.end())
         return T[j];
@@ -19,6 +20,7 @@ int go(VI& A, Memo& T, int j) {
             T[j] = max(T[j], 1 + go(A, T, i));
     return T[j];
 }
+#endif
 int main() {
     int N; cin >> N;
     VI A; copy_n(istream_iterator<int>(cin), N, back_inserter(A));
