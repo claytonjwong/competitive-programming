@@ -56,7 +56,7 @@ int main() {
     int M, N; cin >> M >> N;
     VVI A(M, VI(N));
     // clock-wise: up, up-right, right, down-right, down, down-left, left, up-left
-    VVI dirs = {{-1, 0}, {-1, 1}, {0, 1}, {1, 1}, {1, 0}, {1, -1}, {0, -1}, {-1, -1}};
+    VVI dirs = { {-1, 0}, {-1, 1}, {0, 1}, {1, 1}, {1, 0}, {1, -1}, {0, -1}, {-1, -1} };
     auto inBounds = [&](auto i, auto j) {
         return 0 <= i && i < M && 0 <= j && j < N;
     };
