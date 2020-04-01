@@ -110,3 +110,4 @@
 
 ### Assignments
 1. [Longest Increasing Subsequence](5_dynamic_programming/README.md#longest-increasing-subsequence)
+2. [Edit Distance](5_dynamic_programming/README.md#edit-distance)
