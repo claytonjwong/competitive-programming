@@ -50,7 +50,7 @@ int main() {
     auto max{ 0 };
     Memo T;
     for (auto j{ 0 }; j < N; ++j) // for each ending position j inclusive
-        max = std::max(max, go(A, T, j)); // best T[j] via each LIS ending at each position i < j where A[i] < A[j]
+        max = std::max(max, go(A, T, j)); // max LIS ending at each position j
     cout << max << endl;
 #else // BOTTOM_UP 👆
     VI T(N, 1);
