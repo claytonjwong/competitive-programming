@@ -112,3 +112,4 @@
 1. [Longest Increasing Subsequence](5_dynamic_programming/README.md#longest-increasing-subsequence)
 2. [Edit Distance](5_dynamic_programming/README.md#edit-distance)
 3. [Sum of Digits](5_dynamic_programming/README.md#sum-of-digits)
+4. [Make It Sorted](5_dynamic_programming/README.md#make-it-sorted)
