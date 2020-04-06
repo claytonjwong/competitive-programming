@@ -114,6 +114,8 @@
 3. [Sum of Digits](5_dynamic_programming/README.md#sum-of-digits)
 4. [Make It Sorted](5_dynamic_programming/README.md#make-it-sorted)
 
+---
+
 ## [Week 6: Dynamic Programming 2](6_dynamic_programming2)
 ### Key Concepts
 * Practice implementing dynamic programming solutions
