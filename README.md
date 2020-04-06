@@ -113,3 +113,14 @@
 2. [Edit Distance](5_dynamic_programming/README.md#edit-distance)
 3. [Sum of Digits](5_dynamic_programming/README.md#sum-of-digits)
 4. [Make It Sorted](5_dynamic_programming/README.md#make-it-sorted)
+
+## [Week 6: Dynamic Programming 2](6_dynamic_programming2)
+### Key Concepts
+* Practice implementing dynamic programming solutions
+* Design dynamic programming solutions
+
+### Resources
+* [Dynamic Programming 2](6_dynamic_programming2/docs/dynprog2.pdf)
+
+### Assignments
+* [1. Knapsack](6_dynamic_programming2/README.md#knapsack)
