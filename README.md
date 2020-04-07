@@ -126,3 +126,4 @@
 
 ### Assignments
 * [1. Knapsack](6_dynamic_programming2/README.md#knapsack)
+* [4. Maximal Sum Square](6_dynamic_programming2/README.md#maximal-sum-square)
