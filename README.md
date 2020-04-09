@@ -118,12 +118,19 @@
 
 ## [Week 6: Dynamic Programming 2](6_dynamic_programming2)
 ### Key Concepts
-* Practice implementing dynamic programming solutions
-* Design dynamic programming solutions
+* Recursive vs Iterative
+	* Recursive Advantages
+		* May be faster than iterative if *not* all subproblems need to be solved
+		* Easier to implement since the subproblem order is implicitly found by the recursion
+	* Iterative Advantages
+		* No recursive stack overhead
+		* Memory optimization to only store the previous and current rows
 
 ### Resources
 * [Dynamic Programming 2](6_dynamic_programming2/docs/dynprog2.pdf)
 
 ### Assignments
-* [1. Knapsack](6_dynamic_programming2/README.md#knapsack)
-* [4. Maximal Sum Square](6_dynamic_programming2/README.md#maximal-sum-square)
+1. [Knapsack](6_dynamic_programming2/README.md#knapsack)
+2. [Chain Matrix Multiplication](6_dynamic_programming2/README.md#chain-matrix-multiplication)
+3. [Longest Common Subsequence](6_dynamic_programming2/README.md#longest-common-subsequence)
+4. [Maximal Sum Square](6_dynamic_programming2/README.md#maximal-sum-square)

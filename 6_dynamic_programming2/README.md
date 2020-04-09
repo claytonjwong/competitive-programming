@@ -7,8 +7,10 @@
 * [Dynamic Programming 2](docs/dynprog2.pdf)
 
 ## Assignments
-* [1. Knapsack](#knapsack)
-* [4. Maximal Sum Square](#maximal-sum-square)
+1. [Knapsack](#knapsack)
+2. [Chain Matrix Multiplication](#chain-matrix-multiplication)
+3. [Longest Common Subsequence](#longest-common-subsequence)
+4. [Maximal Sum Square](#maximal-sum-square)
 
 ---
 
@@ -71,6 +73,77 @@ int main() {
     return 0;
 }
 ```
+
+---
+
+## Chain Matrix Multiplication
+
+![](2_chain_matrix_multiplication/2_chain_matrix_multiplication.png)
+
+```cpp
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <unordered_map>
+#include <algorithm>
+#include <iterator>
+
+using namespace std;
+using LL = unsigned long long;
+using VLL = vector<LL>;
+using VVLL = vector<VLL>;
+using Memo = unordered_map<string, LL>;
+int INF = 1e9 + 7;
+
+//#define TOP_DOWN
+
+#ifdef TOP_DOWN
+string key(int i, int j) {
+    stringstream key; key << i << "," << j;
+    return key.str();
+}
+int go(VLL& A, int i, int j, Memo&& T = {}) {
+    auto x = key(i, j);
+    if (T[x])
+        return T[x];
+    T[x] = INF;
+    if (i + 1 >= j)
+        return T[x] = 0;
+    for (auto k{ i + 1 }; k < j; ++k)
+        T[x] = min(T[x], go(A, i, k, move(T)) + go(A, k, j, move(T)) + A[i] * A[k] * A[j]);
+    return T[x];
+}
+#endif
+int main() {
+    int N; cin >> N;
+    VLL A; copy_n(istream_iterator<LL>(cin), N + 1, back_inserter(A)); // N + 1 because each matrix i has dimensions A[i], A[i + 1]
+#ifdef TOP_DOWN // 👇
+    cout << go(A, 0, N) << endl; // j == N == A.size() - 1
+#else // BOTTOM_UP 👆
+    VVLL T(N + 1, VLL(N + 1, INF));
+    for (auto i{ 0 }; i < N; ++i)
+        T[i][i + 1] = 0;
+    for (auto len{ 2 }; len <= N; ++len)
+        for (auto i{ 0 }; i + len <= N; ++i)
+            for (auto j{ i + len }, k{ i + 1 }; k < j; ++k)
+                T[i][j] = min(T[i][j], T[i][k] + T[k][j] + A[i] * A[k] * A[j]);
+    cout << T[0][N] << endl;
+#endif
+    return 0;
+}
+```
+
+---
+
+## Longest Common Subsequence
+
+![](3_longest_common_subsequence/3_longest_common_subsequence.png)
+
+```cpp
+// TODO: implement me
+```
+
+---
 
 ## Maximal Sum Square
 
