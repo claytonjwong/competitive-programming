@@ -5,6 +5,7 @@
 
 ## Resources
 * [Dynamic Programming 2](docs/dynprog2.pdf)
+* [Maximal Sum Square](4_maximal_sum_square/4_maximal_sum_square.pdf)
 
 ## Assignments
 1. [Knapsack](#knapsack)

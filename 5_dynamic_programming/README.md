@@ -7,6 +7,7 @@
 
 ## Resources
 1. [Dynamic Programming](docs/dynprog.pdf)
+2. [Make It Sorted Solution](4_make_it_sorted/4_make_it_sorted.pdf)
 
 ## Assignments
 1. [Longest Increasing Subsequence](#longest-increasing-subsequence)

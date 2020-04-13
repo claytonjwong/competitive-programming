@@ -67,6 +67,7 @@
 ### Resources
 1. [Insidious Numbers](3_common_struggles/docs/1_insidious_numbers/numbers.pdf)
 2. [Getting Unstuck](3_common_struggles/docs/4_getting_unstuck/Getting_Unstuck.pptx)
+3. [Binary Knapsack Solution](3_common_struggles/4_binary_knapsack/4_binary_knapsack.pdf)
 
 ### Assignments
 
@@ -89,6 +90,7 @@
 1. [Greedy Algorithms](4_technical_problems/docs/1_greedy_algorithms/greedy.pdf)
 2. [Segment Tree](4_technical_problems/docs/2_segment_tree/segment_final.pdf)
 3. [Language Specifics](4_technical_problems/docs/3_language_specifics/language.pdf)
+4. [Maximal Sum Subarray Solution](4_technical_problems/4_maximal_sum_subarray/4_maximal_sum_subarray.pdf)
 
 ### Assignments
 1. [The Most Frequent Symbol](4_technical_problems/README.md#the-most-frequent-symbol)
@@ -107,6 +109,7 @@
 
 ### Resources
 1. [Dynamic Programming](5_dynamic_programming/docs/dynprog.pdf)
+2. [Make It Sorted Solution](5_dynamic_programming/4_make_it_sorted/4_make_it_sorted.pdf)
 
 ### Assignments
 1. [Longest Increasing Subsequence](5_dynamic_programming/README.md#longest-increasing-subsequence)

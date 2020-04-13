@@ -12,6 +12,7 @@
 ## Resources
 1. [Insidious Numbers](docs/1_insidious_numbers/numbers.pdf)
 2. [Getting Unstuck](docs/4_getting_unstuck/Getting_Unstuck.pptx)
+3. [Binary Knapsack Solution](4_binary_knapsack/4_binary_knapsack.pdf)
 
 ## Assignments
 0. [Quiz](docs/quiz.pdf)

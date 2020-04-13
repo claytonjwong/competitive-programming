@@ -10,6 +10,7 @@
 1. [Greedy Algorithms](docs/1_greedy_algorithms/greedy.pdf)
 2. [Segment Tree](docs/2_segment_tree/segment_final.pdf)
 3. [Language Specifics](docs/3_language_specifics/language.pdf)
+4. [Maximal Sum Subarray Solution](4_maximal_sum_subarray/4_maximal_sum_subarray.pdf)
 
 ## Assignments
 1. [The Most Frequent Symbol](#the-most-frequent-symbol)
